@@ -5,4 +5,4 @@ var Remarked = require('../remarked.js'),
     remarked = new Remarked();
     testHtml = fs.readFileSync('./test.html','utf8');
 
-    remarked.convert(testHtml);
+    console.log(remarked.convert(testHtml));
