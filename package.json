@@ -1,0 +1,23 @@
+{
+    "name": "remarked",
+    "version": "0.0.1",
+    "description": "A simple HTML to Markdown converter.",
+    "main": "remarked.js",
+    "dependencies": {
+        "jsdom": "10.1.0"
+    },
+    "engines": {
+        "node": "4.0.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Mikejonesab12/remarked"
+    },
+    "keywords": [
+        "html",
+        "markdown",
+        "converter"
+    ],
+    "author": "Michael Jones <mikejonesab12@gmail.com>",
+    "license": "GPL-3.0"
+}
