@@ -13,14 +13,32 @@ Remarked.prototype.convert = function (html){
     this.DOM = new JSDOM(html);
     this.body = this.DOM.window.document.body;
 
-    this.nodes = this.flattenDom(this.body, []);
-    result = this.build(this.nodes);
+    //this.nodes = this.flattenDom(this.body, []);
+    result = this.build(this.body,{});
 
     return result;
 };
 
-Remarked.prototype.build = function (nodes){
-    var self = this,
+Remarked.prototype.build = function (node, result){
+	var children = Array.prototype.slice.call(node.childNodes),
+		childMd;
+
+	if(node.nodeType === 3){
+		result.md = node.textContent.replace(/[\r\n\t].*?/g, '');
+	}
+
+	childMd = children.reduce(function(text, child){
+	       var newResult = this.build(child, result);
+           result.md += newResult;
+	},'');
+
+	if (node.nodeType === 1){
+		result.md = (self.converters[node.tagName] || self.converters['default'])(childMd, node);
+	}
+
+    return result;
+
+    /*var self = this,
         nodesArray = Array.prototype.slice.call(nodes);
 
     return nodesArray.reduce(function (result, node){
@@ -40,7 +58,7 @@ Remarked.prototype.build = function (nodes){
         }
 
         return node._md;
-    },'');
+    },'');*/
 };
 
 Remarked.prototype.flattenDom = function (node, nodes){
