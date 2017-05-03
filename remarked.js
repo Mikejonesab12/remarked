@@ -24,7 +24,7 @@ Remarked.prototype.build = function(node, result) {
 		childMd;
 
 	if (node.nodeType === 3) {
-		result.md = node.textContent.replace(/[\r\n\t].*?/g, '');
+		result.md = self.converters.text(node.textContent);
 	}
 
 	childMd = children.reduce(function(text, child) {
@@ -44,7 +44,12 @@ Remarked.prototype.build = function(node, result) {
 };
 
 Remarked.prototype.blockElements = [
-	'DIV'
+	'DIV',
+	'ADDRESS',
+	'ARTICLE',
+	'SECTION',
+	'HEADER',
+	'FOOTER'
 ];
 
 Converters(Remarked);
