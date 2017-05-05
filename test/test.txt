@@ -1,29 +1,42 @@
+# Remarked Test
 
-#Remarked Test 
+## Pirate Stuff:
 
-##Pirate Stuff: 
- 	* treasure 
- 	* rum 
- 	* ship 
+
+ *  treasure 
+ *  rum 
+ *  ship 
  
-###To Do list: 
- 	1. sleep\. 
- 	1. sleep\. 
- 	1. more sleep\. 
-  Jib Brethren of the Coast ballast main sheet skysail parrel starboard man\-of\-war weigh anchor blow the man down\.
-			Barbary Coast tackle pinnace starboard grog blossom bilged on her anchor careen driver jib grog\.
-			Bounty gabion galleon case shot Sail ho chase holystone blow the man down hail\-shot six pounders\.
-			Run a rig Chain Shot reef Letter of Marque topsail scallywag parley Jack Tar pressgang man\-of\-war\.  Parley Jack Ketch hearties case shot deadlights mizzen ye draught loot smartly\.
-			Stern fathom league interloper tender pirate gally barkadeer rutters tackle\.
-			To go on account crow's nest hornswaggle nipperkin Admiral of the *Black gally **code ** of conduct * lass hang the jib league\.
-			Reef prow yardarm bilged on her anchor fore hearties cackle fruit hulk keelhaul bowsprit\.      
-####Code 
-function doNothing \(tv\, naps\)\{
+### To Do list:
+
+
+ 1.  sleep\. 
+ 1.  sleep\. 
+ 1.  more sleep\. 
+ 
+
+ 
+ Jib Brethren of the Coast ballast main sheet skysail parrel starboard man\-of\-war weigh anchor blow the man down\. Barbary Coast tackle pinnace starboard grog blossom bilged on her anchor careen driver jib grog\. Bounty gabion galleon case shot Sail ho chase holystone blow the man down hail\-shot six pounders\. Run a rig Chain Shot reef Letter of Marque topsail scallywag parley Jack Tar pressgang man\-of\-war\. 
+
+ 
+ Parley Jack Ketch hearties case shot deadlights mizzen ye draught loot smartly\. Stern fathom league interloper tender pirate gally barkadeer rutters tackle\. To go on account crow's nest hornswaggle nipperkin Admiral of the *Black gally **code**  of conduct*  lass hang the jib league\. Reef prow yardarm bilged on her anchor fore hearties cackle fruit hulk keelhaul bowsprit\. 
+
+     
+
+#### Code
+
+```
+
+			function doNothing \(tv\, naps\)\{
 				return doNothing\(\);
-			\} Loaded to the gunwalls me crimp parrel lateen sail Nelsons folly sheet ye poop deck Sink me\.
-				Interloper no prey\, no pay transom lee avast starboard squiffy Chain Shot *Shiver me timbers * plunder\.
-				Black jack transom lateen sail jib prow hardtack blow the man down Letter of Marque swab line\.
-				Brig starboard holystone walk the plank Letter of Marque American Main schooner deadlights me bilged on her anchor\. @\\_\_\_\_\_\_\_/@
+			\}
+		
+```
+
+ Loaded to the gunwalls me crimp parrel lateen sail Nelsons folly sheet ye poop deck Sink me\. Interloper no prey\, no pay transom lee avast starboard squiffy Chain Shot *Shiver me timbers*  plunder\. Black jack transom lateen sail jib prow hardtack blow the man down Letter of Marque swab line\. Brig starboard holystone walk the plank Letter of Marque American Main schooner deadlights me bilged on her anchor\. 
+
+```
+								@\\_\_\_\_\_\_\_/@
 				  @|XXXXXXXX |
 				 @ |X||    X |
 				@  |X||    X |
@@ -45,9 +58,15 @@ function doNothing \(tv\, naps\)\{
 				 |XX|======= X||============================\+ || \.\. %  \.\.\.\.\.\.\.\.
 				===== /            X||                              ||    %
 							 X||           /\)                 ||    %
-				~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Heave to landlubber or just lubber wench cutlass draught to go on account jack Yellow Jack fore bucko\.
-			Maroon port doubloon code of conduct mizzenmast loot rigging run a rig bowsprit blow the man down\.
-			Brethren of the Coast **scallywag man\-of\-war ** strike colors keelhaul lass no prey\, no pay hands long boat overhaul\.   Coxswain schooner stern splice the main brace Blimey carouser ballast draught heave down heave to\.
-				Chain Shot Letter of Marque hail\-shot pinnace measured fer yer chains Sink me maroon hang the jib take a caulk bilge rat\.
-				Ahoy jack dead men tell no tales cutlass rum brig galleon Jack Ketch code of conduct cog\.
-				Tender hail\-shot lad schooner scurvy come about grog chase guns blow the man down pink\.      
+				~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			
+```
+
+ Heave to landlubber or just lubber wench cutlass draught to go on account jack Yellow Jack fore bucko\. Maroon port doubloon code of conduct mizzenmast loot rigging run a rig bowsprit blow the man down\. Brethren of the Coast **scallywag man\-of\-war**  strike colors keelhaul lass no prey\, no pay hands long boat overhaul\.   
+ Coxswain schooner stern splice the main brace Blimey carouser ballast draught heave down heave to\. Chain Shot Letter of Marque hail\-shot pinnace measured fer yer chains Sink me maroon hang the jib take a caulk bilge rat\. Ahoy jack dead men tell no tales cutlass rum brig galleon Jack Ketch code of conduct cog\. Tender hail\-shot lad schooner scurvy come about grog chase guns blow the man down pink\. 
+
+ 
+
+
+    
+

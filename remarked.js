@@ -24,7 +24,7 @@ Remarked.prototype.build = function(node, result) {
 		childMd;
 
 	if (node.nodeType === 3) {
-		result.md = self.converters.text(node.textContent);
+		result.md = self.converters.text(node.textContent, node);
 	}
 
 	childMd = children.reduce(function(text, child) {
