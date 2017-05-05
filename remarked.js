@@ -45,6 +45,16 @@ Remarked.prototype.build = function(node, result) {
 
 Remarked.prototype.blockElements = [
 	'DIV',
+	'UL',
+	'OL',
+	'PRE',
+	'CODE',
+	'H1',
+	'H2',
+	'H3',
+	'H4',
+	'H5',
+	'H6',
 	'ADDRESS',
 	'ARTICLE',
 	'SECTION',
