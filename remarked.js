@@ -45,6 +45,8 @@ Remarked.prototype.build = function(node, result) {
 
 Remarked.prototype.blockElements = [
 	'DIV',
+	'HR',
+	'P',
 	'UL',
 	'OL',
 	'PRE',
@@ -59,6 +61,7 @@ Remarked.prototype.blockElements = [
 	'ARTICLE',
 	'SECTION',
 	'HEADER',
+	'BLOCKQUOTE',
 	'FOOTER'
 ];
 
