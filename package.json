@@ -1,6 +1,6 @@
 {
-    "name": "remarked",
-    "version": "0.0.1",
+    "name": "remarked.js",
+    "version": "1.0.0",
     "description": "A simple HTML to Markdown converter.",
     "main": "remarked.js",
     "dependencies": {
@@ -11,7 +11,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/Mikejonesab12/remarked"
+        "url": "https://github.com/Mikejonesab12/remarked.js"
     },
     "keywords": [
         "html",

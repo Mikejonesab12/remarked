@@ -1,8 +1,10 @@
 var JSDOM = require('jsdom').JSDOM,
 	Converters = require('./lib/converters.js');
 
-function Remarked() {
-
+function Remarked(html) {
+	if(html){
+		this.markdown = this.convert(html);
+	}
 }
 
 Remarked.prototype.convert = function(html) {
@@ -15,7 +17,7 @@ Remarked.prototype.convert = function(html) {
 
 	result = this.build(this.body, {md:'', block:''});
 
-	return result.block;
+	return result.block.trim();
 };
 
 Remarked.prototype.build = function(node, result) {
@@ -62,6 +64,7 @@ Remarked.prototype.blockElements = [
 	'SECTION',
 	'HEADER',
 	'BLOCKQUOTE',
+	'IMG',
 	'FOOTER'
 ];
 
