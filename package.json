@@ -2,7 +2,7 @@
     "name": "unmark",
     "version": "1.0.0",
     "description": "A simple HTML to Markdown converter.",
-    "main": "remarked.js",
+    "main": "unmark.js",
     "dependencies": {
         "jsdom": "10.1.0"
     },
