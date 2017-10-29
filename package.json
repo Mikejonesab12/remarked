@@ -1,6 +1,6 @@
 {
     "name": "unmark",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "A simple HTML to Markdown converter.",
     "main": "unmark.js",
     "dependencies": {
