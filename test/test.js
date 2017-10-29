@@ -1,9 +1,9 @@
-var Remarked = require('../remarked.js'),
+var unmark = require('../unmark.js'),
 	fs = require('fs'),
 	remarked,
 	testHtml;
 
 testHtml = fs.readFileSync('./test.html', 'utf8');
-remarked = new Remarked(testHtml);
+remarked = new unmark(testHtml);
 
-fs.writeFileSync('./test.txt',remarked.markdown, 'utf8');
+fs.writeFileSync('./test.md',remarked.markdown, 'utf8');

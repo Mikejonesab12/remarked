@@ -1,13 +1,13 @@
 var JSDOM = require('jsdom').JSDOM,
-	Converters = require('./lib/converters.js');
+	converters = require('./lib/converters.js');
 
-function Remarked(html) {
+function Unmark(html) {
 	if(html){
 		this.markdown = this.convert(html);
 	}
 }
 
-Remarked.prototype.convert = function(html) {
+Unmark.prototype.convert = function(html) {
 	var result;
 
 	if (typeof html !== 'string') throw 'HTML must be a string.';
@@ -20,7 +20,7 @@ Remarked.prototype.convert = function(html) {
 	return result.block.trim();
 };
 
-Remarked.prototype.build = function(node, result) {
+Unmark.prototype.build = function(node, result) {
 	var self = this,
 		children = Array.prototype.slice.call(node.childNodes),
 		childMd;
@@ -45,7 +45,7 @@ Remarked.prototype.build = function(node, result) {
 	return result;
 };
 
-Remarked.prototype.blockElements = [
+Unmark.prototype.blockElements = [
 	'DIV',
 	'HR',
 	'P',
@@ -68,6 +68,6 @@ Remarked.prototype.blockElements = [
 	'FOOTER'
 ];
 
-Converters(Remarked);
+Unmark.prototype.converters = converters;
 
-module.exports = Remarked;
+module.exports = Unmark;

@@ -1,5 +1,5 @@
 {
-    "name": "remarked.js",
+    "name": "unmark",
     "version": "1.0.0",
     "description": "A simple HTML to Markdown converter.",
     "main": "remarked.js",
@@ -11,7 +11,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/Mikejonesab12/remarked.js"
+        "url": "https://github.com/Mikejonesab12/unmark"
     },
     "keywords": [
         "html",
