@@ -1,13 +1,13 @@
 {
     "name": "unmark",
-    "version": "1.0.1",
+    "version": "2.0.0",
     "description": "A simple HTML to Markdown converter.",
     "main": "unmark.js",
     "dependencies": {
-        "jsdom": "10.1.0"
+        "jsdom": "13.0.0"
     },
     "engines": {
-        "node": "4.0.0"
+        "node": ">=8.0.0"
     },
     "repository": {
         "type": "git",

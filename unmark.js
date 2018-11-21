@@ -1,73 +1,67 @@
 var JSDOM = require('jsdom').JSDOM,
-	converters = require('./lib/converters.js');
+    converters = require('./lib/converters.js');
+    
+const ELEMENT_NODE = 1;
+const TEXT_NODE = 3;
 
-function Unmark(html) {
-	if(html){
-		this.markdown = this.convert(html);
-	}
-}
-
-Unmark.prototype.convert = function(html) {
-	var result;
-
-	if (typeof html !== 'string') throw 'HTML must be a string.';
-
-	this.DOM = new JSDOM(html);
-	this.body = this.DOM.window.document.body;
-
-	result = this.build(this.body, {md:'', block:''});
-
-	return result.block.trim();
-};
-
-Unmark.prototype.build = function(node, result) {
-	var self = this,
-		children = Array.prototype.slice.call(node.childNodes),
-		childMd;
-
-	if (node.nodeType === 3) {
-		result.md = self.converters.text(node.textContent, node);
-	}
-
-	childMd = children.reduce(function(text, child) {
-		return text += self.build(child, result).md;
-	}, '');
-
-	if (node.nodeType === 1 && !self.blockElements.includes(node.tagName)) {
-		result.md = (self.converters[node.tagName] || self.converters['default'])(childMd, node);
-	}
-
-	if (node.nodeType === 1 && self.blockElements.includes(node.tagName)) {
-		result.block += (self.converters[node.tagName] || self.converters['default'])(childMd, node);
-		result.md = '';
-	}
-
-	return result;
-};
-
-Unmark.prototype.blockElements = [
-	'DIV',
-	'HR',
-	'P',
-	'UL',
-	'OL',
-	'PRE',
-	'CODE',
-	'H1',
-	'H2',
-	'H3',
-	'H4',
-	'H5',
-	'H6',
-	'ADDRESS',
-	'ARTICLE',
-	'SECTION',
-	'HEADER',
-	'BLOCKQUOTE',
-	'IMG',
-	'FOOTER'
+const BLOCK_ELEMENTS = [
+    'DIV',
+    'HR',
+    'P',
+    'UL',
+    'OL',
+    'PRE',
+    'CODE',
+    'H1',
+    'H2',
+    'H3',
+    'H4',
+    'H5',
+    'H6',
+    'ADDRESS',
+    'ARTICLE',
+    'SECTION',
+    'HEADER',
+    'BLOCKQUOTE',
+    'IMG',
+    'FOOTER'
 ];
 
-Unmark.prototype.converters = converters;
+const traverseNode = (node, result) => {
+    const childNodes = Array.prototype.slice.call(node.childNodes); // converts DOM node list to js array
+
+    const childMarkdown = childNodes.reduce((accumulatedMarkdown, childNode) => {
+        return accumulatedMarkdown += traverseNode(childNode, result).markdown;
+    }, '');
+
+    if (node.nodeType === TEXT_NODE) {
+        result.markdown = converters.text(node.textContent, node);
+        return result;
+    }
+
+    if (node.nodeType === ELEMENT_NODE && !BLOCK_ELEMENTS.includes(node.tagName)) {
+        result.markdown = (converters[node.tagName] || converters['default'])(childMarkdown, node);
+    }
+
+    if (node.nodeType === ELEMENT_NODE && BLOCK_ELEMENTS.includes(node.tagName)) {
+        result.block += (converters[node.tagName] || converters['default'])(childMarkdown, node);
+        result.markdown = '';
+    }
+
+    return result;
+}
+
+const Unmark = (htmlString) => {
+    if(!htmlString && typeof htmlString !== 'string'){
+        throw 'Missing or invalid HTML. HTML must be a string';
+    }
+    
+    const DOM = new JSDOM(htmlString);
+    const body = DOM.window.document.body;
+    
+    const result = traverseNode(body, {markdown: '', block: ''});
+    
+    return result.block.trim(); 
+}
 
 module.exports = Unmark;
