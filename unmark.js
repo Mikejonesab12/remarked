@@ -28,16 +28,16 @@ const BLOCK_ELEMENTS = [
 ];
 
 const traverseNode = (node, result) => {
+    if (node.nodeType === TEXT_NODE) {
+        result.markdown = converters.text(node.textContent, node);
+        return result;
+    }
+
     const childNodes = Array.prototype.slice.call(node.childNodes); // converts DOM node list to js array
 
     const childMarkdown = childNodes.reduce((accumulatedMarkdown, childNode) => {
         return accumulatedMarkdown += traverseNode(childNode, result).markdown;
     }, '');
-
-    if (node.nodeType === TEXT_NODE) {
-        result.markdown = converters.text(node.textContent, node);
-        return result;
-    }
 
     if (node.nodeType === ELEMENT_NODE && !BLOCK_ELEMENTS.includes(node.tagName)) {
         result.markdown = (converters[node.tagName] || converters['default'])(childMarkdown, node);
